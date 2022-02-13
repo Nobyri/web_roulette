@@ -1,0 +1,19 @@
+@startuml
+[*] -> top
+top --> input : start_button
+top --> history : history_button
+
+input --> top : return_button
+input --> roulette : start_button
+input <-- roulette : return_button
+
+roulette --> history : return_button
+input <-- history : setting_button
+roulette <-- history : start_button
+
+top ---> [*]
+input ---> [*]
+history ---> [*]
+roulette ---> [*]
+
+@enduml
