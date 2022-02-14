@@ -12,6 +12,7 @@
     <input
       type="button"
       value="histry"
+      @click="showHistry"
       class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
     />
   </div>
@@ -24,6 +25,11 @@ export default {
     showInput: function() {
       this.$router.push({
         name: 'Input'
+      })
+    },
+    showHistry: function() {
+      this.$router.push({
+        name: 'Histry'
       })
     }
   }

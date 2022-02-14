@@ -1,3 +1,4 @@
 module.exports = {
-    publicPath: '/gh-pages'
+    // publicPath: '/web_roulette'
+    publicPath: '/'
 }
