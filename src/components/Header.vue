@@ -130,19 +130,7 @@
 // import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
-
-const showInput = function() {
-    this.$router.push({
-        name: 'Input'
-    })
-}
-
-const navigation = [
-  { name: "項目入力", href: "#", current: true, func: showInput},
-  { name: "Team", href: "#", current: false, func: showInput },
-  { name: "Projects", href: "#", current: false, func: showInput },
-  { name: "Calendar", href: "#", current: false, func: showInput },
-];
+import { useRouter } from 'vue-router'
 
 export default {
   components: {
@@ -155,11 +143,34 @@ export default {
     // MenuItems,
     // BellIcon,
     MenuIcon,
-    XIcon,
+    XIcon
   },
   setup() {
+    const router = useRouter()
+    // const route = useRoute()
+
+    const showInput = function() {
+      router.push({
+        name: 'Input'
+      })
+    }
+
+    const showHistry = function() {
+      router.push({
+        name: 'Histry'
+      })
+    }
+
+
+    const navigation = [
+      { name: "項目入力", href: "#", current: true, func: showInput},
+      { name: "履歴", href: "#", current: false, func: showHistry},
+      { name: "Projects", href: "#", current: false, func: showInput },
+      { name: "Calendar", href: "#", current: false, func: showInput },
+    ];
+
     return {
-      navigation,
+      navigation
     };
   },
 };
